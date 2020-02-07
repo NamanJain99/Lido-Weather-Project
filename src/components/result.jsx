@@ -1,6 +1,6 @@
 import React from 'react';
-import './WeatherBox.css';
-export default class WeatherBox extends React.Component {
+import './result.css';
+export default class Result extends React.Component {
   getDay = date => {
     let weekday = new Array(7);
     weekday[0] = 'Sunday';

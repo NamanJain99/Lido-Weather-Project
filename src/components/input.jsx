@@ -1,7 +1,7 @@
 import React from 'react';
-import './CityInput.css';
+import './input.css';
 
-export default class CityInput extends React.Component {
+export default class Input extends React.Component {
   render(props) {
     const onclickHandler = async e => {
       e.persist();

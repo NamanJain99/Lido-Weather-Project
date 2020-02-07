@@ -1,8 +1,8 @@
 import React from 'react';
 import './App.css';
-import MainWeatherWindow from './components/MainWeatherWindow';
-import CityInput from './components/CityInput';
-import WeatherBox from './components/WeatherBox';
+import Mainpage from './components/Mainpage';
+import Input from './components/input';
+import Result from './components/result';
 
 class App extends React.Component {
   state = {
@@ -63,20 +63,19 @@ class App extends React.Component {
     const WeatherBoxes = () => {
       const weatherBoxes = this.state.days.slice(1).map(day => (
         <li>
-          <WeatherBox {...day} />
+          <Result {...day} />
         </li>
       ));
 
       return <ul className='weather-box-list'>{weatherBoxes}</ul>;
     };
-
     return (
       <div className='App'>
         <header className='App-header'>
-          <MainWeatherWindow data={this.state.days[0]} city={this.state.city}>
-            <CityInput city={this.state.city} makeApiCall={this.makeApiCall.bind(this)} />
+          <Mainpage data={this.state.days[0]} city={this.state.city}>
+            <Input city={this.state.city} makeApiCall={this.makeApiCall.bind(this)} />
             <WeatherBoxes />
-          </MainWeatherWindow>
+          </Mainpage>
         </header>
       </div>
     );
