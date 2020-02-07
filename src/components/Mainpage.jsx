@@ -2,6 +2,26 @@ import React from 'react';
 import './mainpage.css';
 
 export default class MainPage extends React.Component {
+  constructor(props)
+  {
+    super(props);
+    
+      this.state=
+      {
+        date: ""
+      }
+    
+    
+  }
+  componentWillMount()
+  {
+    var h=new Date();
+    this.setState({
+     date:h.getHours()
+    })
+   
+    
+  }
   render(props) {
     const Title = this.props.city ? null : <h1 className='title'>Weather Forecast</h1>;
 
@@ -11,9 +31,9 @@ export default class MainPage extends React.Component {
           {Title}
           <img
             src={
-              this.props.data
-                ? require(`../images/${this.props.data.icon}.svg`)
-                : require('../images/01d.svg')
+              (this.state.date<18)
+                ? require('../images/sun.svg')
+                : require('../images/night.png')
             }
             alt='sun'
             style={{
