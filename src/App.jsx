@@ -1,8 +1,8 @@
 import React from 'react';
 import './App.css';
 import Mainpage from './components/Mainpage';
-import Input from './components/input';
-import Result from './components/result';
+import Input from './components/Input';
+import Result from './components/Result';
 
 class App extends React.Component {
  constructor()
