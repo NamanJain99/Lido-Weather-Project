@@ -5,10 +5,14 @@ import Input from './components/input';
 import Result from './components/result';
 
 class App extends React.Component {
-  state = {
-    city: undefined,
-    days: new Array(5)
-  };
+ constructor()
+  {{
+    super();
+    this.state = {
+      city:"",
+      days: new Array(5)
+    };}
+  }
   updateState = data => {
     const city = data.city.name;
     const days = [];
