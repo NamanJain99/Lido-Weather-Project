@@ -33,7 +33,7 @@ class App extends React.Component {
       days: days 
     });
   };
-  makeApiCall = async city => {
+  getWeatherData = async city => {
     const api_data = await fetch(
       `https://api.openweathermap.org/data/2.5/forecast?q=${city}&APPID=6557810176c36fac5f0db536711a6c52`
     ).then(resp => resp.json());
@@ -77,7 +77,7 @@ class App extends React.Component {
       <div className='App'>
         <header className='App-header'>
           <Mainpage data={this.state.days[0]} city={this.state.city}>
-            <Input city={this.state.city} makeApiCall={this.makeApiCall.bind(this)} />
+            <Input city={this.state.city} getWeatherData={this.getWeatherData.bind(this)} />
             <WeatherBoxes />
           </Mainpage>
         </header>
