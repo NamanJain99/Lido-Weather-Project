@@ -12,7 +12,7 @@ export default class Input extends React.Component {
         if (/^[a-zA-Z0-9äöüÄÖÜß ]+$/.test(city)) {
           e.target.classList.add('loading');
 
-          if (await this.props.makeApiCall(city)) e.target.placeholder = 'Enter a City...';
+          if (await this.props.getWeatherData(city)) e.target.placeholder = 'Enter a City...';
           else e.target.placeholder = 'City was not found, try again...';
         } else e.target.placeholder = 'Please enter a valid city name...';
         e.target.classList.remove('loading');
